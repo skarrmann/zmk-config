@@ -32,7 +32,7 @@
             >;
         };
 
-        symbol {
+        symbol_layer {
             bindings = <
                 &kp COLON &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                  &kp N6    &kp N7    &kp N8   &kp N9   &kp DQT   &kp UNDER
                 &kp HASH  &kp EXCL &kp LPAR &kp RPAR &kp DLLR &kp AMPS                &kp PIPE  &kp EQUAL &kp LBRC &kp RBRC &kp N0    &kp GRAVE
@@ -41,7 +41,7 @@
             >;
         };
 
-        function {
+        function_layer {
             bindings = <
                 &trans &kp F1  &kp F2   &kp F3   &kp F4  &kp PSCRN                          &kp SLCK   &kp HOME   &kp PG_DN    &kp PG_UP    &kp END         &trans
                 &trans &kp F5  &kp F6   &kp F7   &kp F8  &kp INS                            &kp CLCK   &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT       &trans
@@ -50,7 +50,7 @@
             >;
         };
 
-        game {
+        game_layer {
             bindings = <
                 &trans &trans &trans &trans &trans &trans                &trans    &trans &trans   &trans   &trans &trans
                 &trans &trans &trans &trans &trans &trans                &trans    &trans &trans   &trans   &trans &trans
