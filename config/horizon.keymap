@@ -11,7 +11,6 @@
 #define DEF 0
 #define SYM 1
 #define FUN 2
-#define GAM 3
 
 &lt {
     tapping-term-ms = <180>;
@@ -25,10 +24,10 @@
 
         default_layer {
             bindings = <
-                &kp SEMI  &kp Q    &kp W    &kp F     &kp P   &kp G                         &kp J         &kp L    &kp U     &kp Y    &kp SQT   &kp MINUS
-                &kp LSHFT &kp A    &kp R    &kp S     &kp T   &kp D                         &kp H         &kp N    &kp E     &kp I    &kp O     &kp RSHFT
-                &kp LCTRL &kp Z    &kp X    &kp C     &kp V   &kp B       &to DEF &tog GAM  &kp K         &kp M    &kp COMMA &kp DOT  &kp SLASH &kp RCTRL
-                &kp LALT  &kp LGUI &to DEF  &kp ESC   &kp DEL &lt SYM TAB &kp ESC &kp ENTER &lt FUN SPACE &kp BSPC &kp ENTER &tog GAM &kp RGUI  &kp RALT
+                &kp SEMI  &kp Q    &kp W &kp F &kp P   &kp G                         &kp J         &kp L    &kp U     &kp Y   &kp SQT   &kp MINUS
+                &kp LSHFT &kp A    &kp R &kp S &kp T   &kp D                         &kp H         &kp N    &kp E     &kp I   &kp O     &kp RSHFT
+                &kp LCTRL &kp Z    &kp X &kp C &kp V   &kp B       &none   &none     &kp K         &kp M    &kp COMMA &kp DOT &kp SLASH &kp RCTRL
+                &kp LALT  &kp LGUI &none &none &kp DEL &lt SYM TAB &kp ESC &kp ENTER &lt FUN SPACE &kp BSPC &none     &none   &kp RGUI  &kp RALT
             >;
         };
 
@@ -45,17 +44,8 @@
             bindings = <
                 &trans &kp F1  &kp F2   &kp F3   &kp F4  &kp PSCRN                          &kp SLCK   &kp HOME   &kp PG_DN    &kp PG_UP    &kp END         &trans
                 &trans &kp F5  &kp F6   &kp F7   &kp F8  &kp INS                            &kp CLCK   &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT       &trans
-                &trans &kp F9  &kp F10  &kp F11  &kp F12 &bt BT_SEL 0 &bt BT_PRV &bt BT_NXT &bt BT_CLR &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp PAUSE_BREAK &trans
-                &trans &trans  &trans   &trans   &trans  &trans       &trans     &trans     &trans     &trans     &trans       &trans       &trans          &trans
-            >;
-        };
-
-        game_layer {
-            bindings = <
-                &trans &trans &trans &trans &trans &trans                &trans    &trans &trans   &trans   &trans &trans
-                &trans &trans &trans &trans &trans &trans                &trans    &trans &trans   &trans   &trans &trans
-                &trans &trans &trans &trans &trans &trans  &trans &trans &trans    &trans &trans   &trans   &trans &trans
-                &trans &trans &trans &trans &trans &kp TAB &trans &trans &kp SPACE &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT
+                &trans &kp F9  &kp F10  &kp F11  &kp F12 &kp K_MENU &bt BT_PRV   &bt BT_NXT &kp NLCK   &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp PAUSE_BREAK &trans
+                &trans &trans  &trans   &trans   &trans  &trans     &bt BT_SEL 0 &bt CLR    &trans     &trans     &trans       &trans       &trans          &trans
             >;
         };
     };
