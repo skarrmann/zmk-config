@@ -1,0 +1,8 @@
+file_format: "1"
+id: morizon
+name: Morizon
+type: shield
+url: https://github.com/skarrmann/morizon
+requires: [pro_micro]
+features:
+  - keys
