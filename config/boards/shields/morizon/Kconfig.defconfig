@@ -6,4 +6,7 @@ if SHIELD_MORIZON
 config ZMK_KEYBOARD_NAME
     default "Morizon"
 
+config ZMK_PM_SOFT_OFF
+    default y
+
 endif

@@ -48,12 +48,12 @@
             // -----------------------------------------------------------------------------------------------------------------
             // |       |  F1   |  F2   |  F3   |  F4   | PSCRN |---------------| SLCK  | HOME  | PG_DN | PG_UP |  END  |       |
             // |       |  F5   |  F6   |  F7   |  F8   |  INS  |---------------| CLCK  | LEFT  | DOWN  |  UP   | RIGHT |       |
-            // |       |  F9   |  F10  |  F11  |  F12  |  BT0  |  BT-  |  BT+  | BTCLR | MUTE  | VOL-  | VOL+  | PS/BK |       |
+            // |       |  F9   |  F10  |  F11  |  F12  |  BT0  |  BT+  | POWER | BTCLR | MUTE  | VOL-  | VOL+  | PS/BK |       |
             // |       |       |       |       |       |       |       |       |       |       |       |       |       |       |
             bindings = <
                 &trans &kp F1  &kp F2   &kp F3   &kp F4  &kp PSCRN                          &kp SLCK   &kp HOME   &kp PG_DN    &kp PG_UP    &kp END         &trans
                 &trans &kp F5  &kp F6   &kp F7   &kp F8  &kp INS                            &kp CLCK   &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT       &trans
-                &trans &kp F9  &kp F10  &kp F11  &kp F12 &bt BT_SEL 0 &bt BT_PRV &bt BT_NXT &bt BT_CLR &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp PAUSE_BREAK &trans
+                &trans &kp F9  &kp F10  &kp F11  &kp F12 &bt BT_SEL 0 &bt BT_NXT &soft_off  &bt BT_CLR &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp PAUSE_BREAK &trans
                 &trans &trans  &trans   &trans   &trans  &trans       &trans     &trans     &trans     &trans     &trans       &trans       &trans          &trans
             >;
         };
