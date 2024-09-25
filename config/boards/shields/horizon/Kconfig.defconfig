@@ -6,7 +6,4 @@ if SHIELD_HORIZON
 config ZMK_KEYBOARD_NAME
     default "Horizon"
 
-config ZMK_PM_SOFT_OFF
-    default y
-
 endif
