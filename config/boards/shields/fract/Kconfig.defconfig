@@ -1,0 +1,9 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_FRACT
+
+config ZMK_KEYBOARD_NAME
+    default "Fract"
+
+endif

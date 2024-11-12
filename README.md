@@ -4,3 +4,4 @@ This repository provides ZMK shields and default keymaps for the following keybo
 
 * [Horizon](https://github.com/skarrmann/horizon)
 * [Morizon](https://github.com/skarrmann/morizon)
+* [Fract](https://github.com/skarrmann/fract) [WORK IN PROGRESS!]
