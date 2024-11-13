@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 The ZMK Contributors
+ * Copyright (c) 2024 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
@@ -10,12 +10,8 @@
 
 #define DEF 0
 #define SYM 1
-#define FUN 2
-
-&lt {
-    tapping-term-ms = <180>;
-    flavor = "tap-preferred";
-};
+#define NAV 2
+#define FUN 3
 
 / {
     keymap {
@@ -23,28 +19,37 @@
 
         default_layer {
             bindings = <
-                &kp Q    &kp W &kp F &kp P   &kp G   &kp J     &kp L    &kp U     &kp Y   &kp SQT
-                &kp A    &kp R &kp S &kp T   &kp D   &kp H     &kp N    &kp E     &kp I   &kp O
-                &kp Z    &kp X &kp C &kp V   &kp B   &kp K     &kp M    &kp COMMA &kp DOT &kp SLASH
-                                     &kp DEL &kp TAB &kp SPACE &kp BSPC
+                &kp Q    &kp W &kp F &kp P   &kp G     &kp J     &kp L   &kp U     &kp Y   &kp SQT
+                &kp A    &kp R &kp S &kp T   &kp D     &kp H     &kp N   &kp E     &kp I   &kp O
+                &kp Z    &kp X &kp C &kp V   &kp B     &kp K     &kp M   &kp COMMA &kp DOT &kp SLASH
+                                     &mo NAV &kp LSHFT &kp SPACE &mo SYM
             >;
         };
 
         symbol_layer {
             bindings = <
-                &kp Q    &kp W &kp F &kp P   &kp G   &kp J     &kp L    &kp U     &kp Y   &kp SQT
-                &kp A    &kp R &kp S &kp T   &kp D   &kp H     &kp N    &kp E     &kp I   &kp O
-                &kp Z    &kp X &kp C &kp V   &kp B   &kp K     &kp M    &kp COMMA &kp DOT &kp SLASH
-                                     &kp DEL &kp TAB &kp SPACE &kp BSPC
+                &kp SEMI &kp LBKT &kp RBKT  &kp N5    &none    &none  &kp N6    &kp MINUS &kp EQUAL &kp GRAVE
+                &kp N1   &kp N2   &kp N3    &kp N4    &kp BSLH &kp H  &kp N7    &kp N8    &kp N9    &kp N0
+                &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none    &none  &sk RCTRL &sk RSHFT &sk RALT  &sk RGUI
+                                            &mo FUN   &trans   &trans &trans
+            >;
+        };
+
+        navigation_layer {
+            bindings = <
+                &kp PSCRN &kp INS  &kp K_APP &kp DEL   &none  &none  &kp HOME  &kp PG_DN &kp PG_UP &kp END 
+                &kp ESC   &kp TAB  &kp ENTER &kp BSPC  &none  &none  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+                &sk LGUI  &sk LALT &sk LSHFT &sk LCTRL &none  &none  &sk RCTRL &sk RSHFT &sk RALT  &sk RGUI
+                                             &trans    &trans &trans &mo FUN
             >;
         };
 
         function_layer {
             bindings = <
-                &kp Q    &kp W &kp F &kp P   &kp G   &kp J     &kp L    &kp U     &kp Y   &kp SQT
-                &kp A    &kp R &kp S &kp T   &kp D   &kp H     &kp N    &kp E     &kp I   &kp O
-                &kp Z    &kp X &kp C &kp V   &kp B   &kp K     &kp M    &kp COMMA &kp DOT &kp SLASH
-                                     &kp DEL &kp TAB &kp SPACE &kp BSPC
+                &kp F1   &kp F2   &kp F3    &kp F4    &bt BT_SEL 0  &kp SLCK   &kp F9     &kp F10      &kp F11      &kp F12
+                &kp F5   &kp F6   &kp F7    &kp F8    &bt BT_NXT    &kp CAPS   &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp PAUSE_BREAK
+                &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &bt BT_CLR    &kp KP_NUM &sk RCTRL  &sk RSHFT    &sk RALT     &sk RGUI
+                                            &trans    &trans        &trans     &trans
             >;
         };
     };
