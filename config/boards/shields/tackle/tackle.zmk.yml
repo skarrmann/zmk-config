@@ -1,0 +1,8 @@
+file_format: "1"
+id: tackle
+name: Tackle
+type: shield
+url: https://github.com/skarrmann/tackle
+requires: [pro_micro]
+features:
+  - keys
