@@ -19,3 +19,5 @@ include:
     shield: morizon
   - board: nice_nano_v2
     shield: fract
+  - board: nice_nano_v2
+    shield: tackle
