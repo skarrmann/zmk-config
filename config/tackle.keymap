@@ -25,7 +25,7 @@
             bindings = <
                 &kp SEMI  &kp Q    &kp W &kp F   &kp P   &kp G       &kp J         &kp L    &kp U     &kp Y   &kp SQT   &kp MINUS
                 &kp LSHFT &kp A    &kp R &kp S   &kp T   &kp D       &kp H         &kp N    &kp E     &kp I   &kp O     &kp RSHFT
-                &kp LCTRL &kp Z    &kp X &kp C   &kp V   &kp B       &kp K         &KP M    &kp COMMA &kp DOT &kp SLASH &kp RCTRL
+                &kp LCTRL &kp Z    &kp X &kp C   &kp V   &kp B       &kp K         &kp M    &kp COMMA &kp DOT &kp SLASH &kp RCTRL
                 &kp LALT  &kp LGUI &none &kp ESC &kp DEL &lt SYM TAB &lt FUN SPACE &kp BSPC &kp ENTER &none   &kp RGUI  &kp RALT
             >;
         };
