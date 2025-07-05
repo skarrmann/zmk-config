@@ -7,15 +7,102 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define DEF 0
 #define SYM 1
-#define NAV 2
-#define FUN 3
+#define FUN 2
+#define COMBO_TIMEOUT 25
 
 &lt {
     tapping-term-ms = <180>;
     flavor = "tap-preferred";
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <1 11>;
+            bindings = <&kp ESC>;
+        };
+        combo_del {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <2 12>;
+            bindings = <&kp DEL>;
+        };
+        combo_tab {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <3 13>;
+            bindings = <&kp TAB>;
+        };
+        combo_pscrn {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <4 14>;
+            bindings = <&kp PSCRN>;
+        };
+        combo_ins {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <5 15>;
+            bindings = <&kp INS>;
+        };
+        combo_enter {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <6 16>;
+            bindings = <&kp ENTER>;
+        };
+        combo_bspc {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <7 17>;
+            bindings = <&kp BSPC>;
+        };
+        combo_k_app {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <8 18>;
+            bindings = <&kp K_APP>;
+        };
+        combo_lshft {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <10 20>;
+            bindings = <&kp LSHFT>;
+        };
+        combo_lgui {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <11 21>;
+            bindings = <&kp LGUI>;
+        };
+        combo_lalt {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <12 22>;
+            bindings = <&kp LALT>;
+        };
+        combo_lctrl {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <13 23>;
+            bindings = <&kp LCTRL>;
+        };
+        combo_rctrl {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <16 26>;
+            bindings = <&kp RCTRL>;
+        };
+        combo_ralt {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <17 27>;
+            bindings = <&kp RALT>;
+        };
+        combo_rgui {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <18 28>;
+            bindings = <&kp RGUI>;
+        };
+        combo_rshft {
+            timeout-ms = <COMBO_TIMEOUT>;
+            key-positions = <19 29>;
+            bindings = <&kp RSHFT>;
+        };
+    };
 };
 
 / {
@@ -24,37 +111,28 @@
 
         default_layer {
             bindings = <
-                &kp Q &kp W &kp F &kp P   &kp G     &kp J         &kp L   &kp U     &kp Y   &kp SQT
-                &kp A &kp R &kp S &kp T   &kp D     &kp H         &kp N   &kp E     &kp I   &kp O
-                &kp Z &kp X &kp C &kp V   &kp B     &kp K         &kp M   &kp COMMA &kp DOT &kp SLASH
-                                  &mo SYM &kp LSHFT &lt NAV SPACE &mo FUN
+                &kp Q &kp W &kp F &kp P     &kp G     &kp J         &kp L   &kp U     &kp Y   &kp SQT
+                &kp A &kp R &kp S &kp T     &kp D     &kp H         &kp N   &kp E     &kp I   &kp O
+                &kp Z &kp X &kp C &kp V     &kp B     &kp K         &kp M   &kp COMMA &kp DOT &kp SLASH
+                                  &kp LCTRL &kp LSHFT &lt SYM SPACE &mo FUN
             >;
         };
 
         symbol_layer {
             bindings = <
-                &kp SEMI &kp LBKT &kp RBKT  &kp N5    &none    &none     &kp N6    &kp MINUS &kp EQUAL &kp GRAVE
-                &kp N1   &kp N2   &kp N3    &kp N4    &kp BSLH &none     &kp N7    &kp N8    &kp N9    &kp N0
-                &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none    &none     &sk RCTRL &sk RSHFT &sk RALT  &sk RGUI
-                                            &trans    &trans   &kp SPACE &trans
-            >;
-        };
-
-        navigation_layer {
-            bindings = <
-                &kp PSCRN &kp INS  &kp K_APP &kp DEL   &none           &none  &kp HOME  &kp PG_DN &kp PG_UP &kp END 
-                &kp ESC   &kp TAB  &kp ENTER &kp BSPC  &kp PAUSE_BREAK &none  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
-                &sk LGUI  &sk LALT &sk LSHFT &sk LCTRL &none           &none  &sk RCTRL &sk RSHFT &sk RALT  &sk RGUI
-                                             &trans    &trans          &trans &trans
+                &kp N1   &kp N2    &kp N3    &kp N4    &kp N5       &kp N6       &kp N7   &kp N8    &kp N9    &kp N0
+                &kp SEMI &kp MINUS &kp EQUAL &kp GRAVE &kp C_PREV   &kp C_NEXT   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT
+                &kp BSLH &kp LBKT  &kp RBKT  &kp C_PP  &kp C_VOL_DN &kp C_VOL_UP &kp HOME &kp PG_DN &kp PG_UP &kp END
+                                             &trans    &trans       &kp SPACE    &trans
             >;
         };
 
         function_layer {
             bindings = <
-                &kp F1   &kp F2   &kp F3  &kp F4  &bt BT_SEL 0 &kp SLCK   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
-                &kp F5   &kp F6   &kp F7  &kp F8  &bt BT_NXT   &kp CAPS   &kp C_RW   &kp C_STOP   &kp C_PLAY   &kp C_FF
-                &kp F9   &kp F10  &kp F11 &kp F12 &bt BT_CLR   &kp KP_NUM &sk RCTRL  &sk RSHFT    &sk RALT     &sk RGUI
-                                          &trans  &trans       &trans     &trans
+                &kp F1 &kp F2  &kp F3  &kp F4  &mkp MB1 &bt BT_SEL 0 &kp SLCK       &kp CLCK       &kp KP_NUM   &kp PAUSE_BREAK
+                &kp F5 &kp F6  &kp F7  &kp F8  &mkp MB2 &bt BT_NXT   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+                &kp F9 &kp F10 &kp F11 &kp F12 &mkp MB3 &bt BT_CLR   &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT
+                                       &trans  &trans   &trans       &trans
             >;
         };
     };
