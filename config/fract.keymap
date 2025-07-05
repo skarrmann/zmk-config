@@ -10,38 +10,12 @@
 
 #define DEF 0
 #define SYM 1
-#define FUN 2
+#define NAV 2
+#define FUN 3
 
 &lt {
     tapping-term-ms = <180>;
-    flavor = "balanced";
-};
-
-/ {
-    behaviors {
-        hml: home_row_mod_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
-            hold-trigger-on-release;
-        };
-        hmr: home_row_mod_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
-            hold-trigger-on-release;
-        };
-    };
+    flavor = "tap-preferred";
 };
 
 / {
@@ -50,28 +24,37 @@
 
         default_layer {
             bindings = <
-                &kp Q       &kp W       &kp F        &kp P        &kp G     &kp J         &kp L        &kp U            &kp Y         &kp SQT
-                &kp A       &kp R       &kp S        &kp T        &kp D     &kp H         &kp N        &kp E            &kp I         &kp O
-                &hml LGUI Z &hml LALT X &hml LSHFT C &hml LCTRL V &kp B     &kp K         &hmr RCTRL M &hmr RSHFT COMMA &hmr RALT DOT &hmr RGUI SLASH
-                                                     &kp LCTRL    &kp LSHFT &lt SYM SPACE &mo FUN
+                &kp Q &kp W &kp F &kp P   &kp G     &kp J         &kp L   &kp U     &kp Y   &kp SQT
+                &kp A &kp R &kp S &kp T   &kp D     &kp H         &kp N   &kp E     &kp I   &kp O
+                &kp Z &kp X &kp C &kp V   &kp B     &kp K         &kp M   &kp COMMA &kp DOT &kp SLASH
+                                  &mo SYM &kp LSHFT &lt NAV SPACE &mo FUN
             >;
         };
 
         symbol_layer {
             bindings = <
-                &kp N1         &kp N2         &kp N3          &kp N4         &kp N5  &kp N6    &kp N7          &kp N8           &kp N9          &kp N0
-                &kp SEMI       &kp MINUS      &kp EQUAL       &kp GRAVE      &kp DEL &kp BSPC  &kp LEFT        &kp DOWN         &kp UP          &kp RIGHT
-                &hml LGUI BSLH &hml LALT LBKT &hml LSHFT RBKT &hml LCTRL TAB &kp ESC &kp ENTER &hmr RCTRL HOME &hmr RSHFT PG_DN &hmr RALT PG_UP &hmr RGUI END
-                                                              &trans         &trans  &trans    &trans
+                &kp SEMI &kp LBKT &kp RBKT  &kp N5    &none    &none     &kp N6    &kp MINUS &kp EQUAL &kp GRAVE
+                &kp N1   &kp N2   &kp N3    &kp N4    &kp BSLH &none     &kp N7    &kp N8    &kp N9    &kp N0
+                &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none    &none     &sk RCTRL &sk RSHFT &sk RALT  &sk RGUI
+                                            &trans    &trans   &kp SPACE &trans
+            >;
+        };
+
+        navigation_layer {
+            bindings = <
+                &kp PSCRN &kp INS  &kp K_APP &kp DEL   &none           &none  &kp HOME  &kp PG_DN &kp PG_UP &kp END 
+                &kp ESC   &kp TAB  &kp ENTER &kp BSPC  &kp PAUSE_BREAK &none  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+                &sk LGUI  &sk LALT &sk LSHFT &sk LCTRL &none           &none  &sk RCTRL &sk RSHFT &sk RALT  &sk RGUI
+                                             &trans    &trans          &trans &trans
             >;
         };
 
         function_layer {
             bindings = <
-                &kp F1       &kp F2        &kp F3         &kp F4         &kp PSCRN &kp SLCK   &kp C_BRI_UP      &bt BT_SEL 0        &bt BT_NXT         &bt BT_CLR
-                &kp F5       &kp F6        &kp F7         &kp F8         &kp INS   &kp CLCK   &kp C_BRI_DN      &kp C_PREV          &kp C_NEXT         &kp C_PLAY_PAUSE
-                &hml LGUI F9 &hml LALT F10 &hml LSHFT F11 &hml LCTRL F12 &kp K_APP &kp KP_NUM &hmr RCTRL C_MUTE &hmr RSHFT C_VOL_DN &hmr RALT C_VOL_UP &hmr RGUI PAUSE_BREAK
-                                                          &trans         &trans    &trans     &trans
+                &kp F1   &kp F2   &kp F3  &kp F4  &bt BT_SEL 0 &kp SLCK   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
+                &kp F5   &kp F6   &kp F7  &kp F8  &bt BT_NXT   &kp CAPS   &kp C_RW   &kp C_STOP   &kp C_PLAY   &kp C_FF
+                &kp F9   &kp F10  &kp F11 &kp F12 &bt BT_CLR   &kp KP_NUM &sk RCTRL  &sk RSHFT    &sk RALT     &sk RGUI
+                                          &trans  &trans       &trans     &trans
             >;
         };
     };
