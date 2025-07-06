@@ -32,7 +32,7 @@
             display-name = "Layer-Tap";
         };
     }
-}
+};
 
 / {
     combos {
