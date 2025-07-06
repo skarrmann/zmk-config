@@ -31,7 +31,7 @@
             bindings = <&mo>, <&kp>;
             display-name = "Layer-Tap";
         };
-    }
+    };
 };
 
 / {
