@@ -47,7 +47,7 @@
         function_layer {
             bindings = <
                 &kp F1 &kp F2  &kp F3  &kp F4  &bt BT_NXT   &kp SLCK   &kp C_PP   &kp C_PREV   &kp C_NEXT   &kp C_BRI_UP
-                &kp F5 &kp F6  &kp F7  &kp F8  &bt BT_SEL 0 &kp CLCK   &kp K_MUTE &kp K_VOL_DN &kp K_VOL_UP &kp C_BRI_DN
+                &kp F5 &kp F6  &kp F7  &kp F8  &bt BT_SEL 0 &kp CLCK   &kp K_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN
                 &kp F9 &kp F10 &kp F11 &kp F12 &bt BT_CLR   &kp KP_NUM &sk RCTRL  &sk RSHFT    &sk RALT     &sk RGUI
                                        &trans  &trans       &trans     &trans
             >;
