@@ -28,10 +28,10 @@
 
         symbol_layer {
             bindings = <
-                &kp GRAVE &kp LBKT &kp RBKT  &kp N5    &none    &none  &kp N6    &kp MINUS &kp EQUAL &kp SEMI
-                &kp N1    &kp N2   &kp N3    &kp N4    &kp BSLH &none  &kp N7    &kp N8    &kp N9    &kp N0
-                &sk LGUI  &sk LALT &sk LSHFT &sk LCTRL &none    &none  &sk RCTRL &sk RSHFT &sk RALT  &sk RGUI
-                                             &mo FUN   &trans   &trans &trans
+                &kp SEMI &kp LBKT &kp RBKT  &kp N5    &none    &none  &kp N6    &kp MINUS &kp EQUAL &kp GRAVE
+                &kp N1   &kp N2   &kp N3    &kp N4    &kp BSLH &none  &kp N7    &kp N8    &kp N9    &kp N0
+                &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none    &none  &sk RCTRL &sk RSHFT &sk RALT  &sk RGUI
+                                            &mo FUN   &trans   &trans &trans
             >;
         };
 
