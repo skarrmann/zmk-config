@@ -29,7 +29,7 @@
         symbol_layer {
             bindings = <
                 &kp SEMI &kp LBKT &kp RBKT  &kp N5    &none    &none  &kp N6    &kp MINUS &kp EQUAL &kp GRAVE
-                &kp N1   &kp N2   &kp N3    &kp N4    &kp BSLH &kp H  &kp N7    &kp N8    &kp N9    &kp N0
+                &kp N1   &kp N2   &kp N3    &kp N4    &kp BSLH &none  &kp N7    &kp N8    &kp N9    &kp N0
                 &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none    &none  &sk RCTRL &sk RSHFT &sk RALT  &sk RGUI
                                             &mo FUN   &trans   &trans &trans
             >;
@@ -46,10 +46,10 @@
 
         function_layer {
             bindings = <
-                &kp F1   &kp F2   &kp F3    &kp F4    &bt BT_SEL 0  &kp SLCK   &kp F9     &kp F10      &kp F11      &kp F12
-                &kp F5   &kp F6   &kp F7    &kp F8    &bt BT_NXT    &kp CAPS   &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp PAUSE_BREAK
-                &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &bt BT_CLR    &kp KP_NUM &sk RCTRL  &sk RSHFT    &sk RALT     &sk RGUI
-                                            &trans    &trans        &trans     &trans
+                &kp F1   &kp F2   &kp F3    &kp F4    &bt BT_SEL 0   &kp SLCK   &kp F9     &kp F10      &kp F11      &kp F12
+                &kp F5   &kp F6   &kp F7    &kp F8    &bt BT_NXT     &kp CAPS   &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp PAUSE_BREAK
+                &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &bt BT_CLR     &kp KP_NUM &sk RCTRL  &sk RSHFT    &sk RALT     &sk RGUI
+                                            &trans    &studio_unlock &trans     &trans
             >;
         };
     };

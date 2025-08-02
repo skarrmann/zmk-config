@@ -6,3 +6,4 @@ url: https://github.com/skarrmann/tackle
 requires: [pro_micro]
 features:
   - keys
+  - studio
